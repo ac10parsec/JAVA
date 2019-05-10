@@ -16,8 +16,6 @@ public class Main2 extends Method{
 		
 	}
 	
-	static int a;
-	
 	public static void A(boolean a) {
 		System.out.println("Main2 A() 호출");
 	}
