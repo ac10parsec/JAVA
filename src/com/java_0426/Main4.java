@@ -6,11 +6,11 @@ public class Main4 {
 		// TODO Auto-generated method stub
 		
 		배열 arr = new 배열();
-		//arr.t1();
-		//arr.t3();
-		//arr.t4();
-		//arr.t5();
-		//arr.t6();
+//		arr.t1();
+//		arr.t3();
+//		arr.t4();
+//		arr.t5();
+//		arr.t6();
 		arr.t7();
 	}
 

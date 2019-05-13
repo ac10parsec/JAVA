@@ -49,7 +49,7 @@ public class 반복문1 {
 					System.out.print("☆");
 				}
 			}
-			System.out.println("s");
+			System.out.println();
 		}
 	}
 	
@@ -91,64 +91,83 @@ public class 반복문1 {
 		}
 	}
 	
+	public void t7() {
+		int k;
+		for (int i = 0; i < 9; i++) {
+			if (i <= 4) {
+				k = i;
+			} else {
+				k = 8 - i;
+			}
+			for (int j = 0; j <= k; j++) {
+				if ((j)%2 == 0) {
+					System.out.print("★");
+				} else {
+					System.out.print("☆");
+				}
+			}
+			System.out.println("");
+		}			
+	}
+	
 //	public void t7() {
-//		int k;
+//		int t = 0;
 //		for (int i = 0; i < 9; i++) {
-//			if (i <= 4) {
-//				k = i;
-//			} else {
-//				k = 8 - i;
+//			if (i > 4) {
+//				t = t - 2;		
 //			}
-//			for (int j = 0; j <= k; j++) {
+//			
+//			for (int j = 0; j <= t; j++) {
 //				if (j%2 == 0) {
 //					System.out.print("★");
 //				} else {
 //					System.out.print("☆");
 //				}
 //			}
+//			
+//			t++;
 //			System.out.println("");
-//		}			
+//		}
 //	}
 	
-	public void t7() {
-		int t = 0;
+	public void t8() {
+		int k;
 		for (int i = 0; i < 9; i++) {
-			if (i > 4) {
-				t = t - 2;		
+			if (i <= 4) {
+				k = i;
+			} else {
+				k = 8 - i;
 			}
-			
-			for (int j = 0; j <= t; j++) {
-				if (j%2 == 0) {
+			for (int j = 0; j <= k; j++) {
+				if (((k-j))%2 == 0) {
 					System.out.print("★");
 				} else {
 					System.out.print("☆");
 				}
 			}
-			
-			t++;
 			System.out.println("");
-		}
+		}			
 	}
 	
-	public void t8() {
-		int t = 0;
-		for (int i = 0; i < 9; i++) {
-			if (i > 4) {
-				t = t - 2;		
-			}
-			
-			for (int j = 0; j <= t; j++) {
-				if ((t-j)%2 == 0) {
-					System.out.print("★");
-				} else {
-					System.out.print("☆");
-				}
-			}
-			
-			t++;
-			System.out.println("");
-		}
-	}
+//	public void t8() {
+//		int t = 0;
+//		for (int i = 0; i < 9; i++) {
+//			if (i > 4) {
+//				t = t - 2;		
+//			}
+//			
+//			for (int j = 0; j <= t; j++) {
+//				if ((t-j)%2 == 0) {
+//					System.out.print("★");
+//				} else {
+//					System.out.print("☆");
+//				}
+//			}
+//			
+//			t++;
+//			System.out.println("");
+//		}
+//	}
 	
 	public void t9() {
 		System.out.println("난이도: 1");

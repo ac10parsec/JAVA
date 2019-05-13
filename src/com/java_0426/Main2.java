@@ -6,9 +6,9 @@ public class Main2 {
 		// TODO Auto-generated method stub
 			
 		반복문2 c = new 반복문2();
-		//c.t1();
-		//c.t2();
-		//c.t3();
+//		c.t1();
+//		c.t2();
+//		c.t3();
 		c.t4(7);
 		
 	}

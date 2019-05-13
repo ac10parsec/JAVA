@@ -13,39 +13,23 @@ public class Quiz10 { // 출제자: 김은채
 	};
 	
 	int ay = 2; int ax = 0; int by = 2; int bx = 0;
+	int[] yx;
+	
+	Scanner scan = new Scanner(System.in);
+	Motion mv = new Motion();
 	
 	public void move() {
-		Scanner scan = new Scanner(System.in);
-		view(ay,ax,by,bx);
+		view();
 		
 		while (true) {
 			System.out.print("방향을 입력하세요: ");
-			String motion = scan.next();
-			switch (motion) {
-			case "w":
-				ay--;
-				break;
-			case "s":
-				ay++;
-				break;
-			case "a":
-				ax--;
-				break;
-			case "d":
-				ax++;
-				break;
-			default:
-				System.out.println("잘못된 이동입니다!");
-				break;
-			}
+			yx = mv.mv(scan.next(),ay,ax);
+			ay = yx[0]; ax = yx[1];
 			
-			if (view(ay,ax,by,bx)) {
+			if (view()) {
 				by = ay;
 				bx = ax;
-			} else {
-				ay = ax;
-				ax = bx;
-			}
+			} 
 			
 			if (ay == 1 && ax == 2) {
 				System.out.print("'머리조심'을 입력하세요: ");
@@ -66,7 +50,7 @@ public class Quiz10 { // 출제자: 김은채
 				} else {
 					ay = 2;
 					ax = 0;
-					view(ay,ax,by,bx);
+					view();
 				}
 			} 
 			
@@ -78,17 +62,16 @@ public class Quiz10 { // 출제자: 김은채
 		scan.close();
 	}
 	
-	public boolean view(int ay, int ax, int by, int bx) {
+	public boolean view() {
 		boolean go = true;
+		if (map[ay][ax] == 1) {
+			ay = by;
+			ax = bx;
+			go = false;
+		}
 		
 		for (int y = 0; y < map.length; y++) {
 			for (int x = 0; x < map[y].length; x++) {
-				if (map[ay][ax] == 1) {
-					ay = by;
-					ax = bx;
-					go = false;
-				}
-				
 				if (y == ay && x == ax) {
 					System.out.print(" S ");
 				} else {

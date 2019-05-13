@@ -118,8 +118,7 @@ public class 배열 {
 		String[][] day = new String[7][5];
 		for (int y = 0; y <day.length; y++) {// day.length; y++) {
 			for (int x = 0; x < day[y].length; x++) {
-				int z = x*7;	
-				int d = y + z + 1;
+				int d = x*7 + 1 + y;
 				day[y][x] = (""+d);
 				if (d <= 30) {
 					System.out.print(t[y]+"(4월"+day[y][x]+"일)\t");

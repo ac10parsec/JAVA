@@ -16,11 +16,12 @@ public class Quiz19 { // 출제자: 정하린
 	
 	int ay = 1; int ax = 1; int by = 1; int bx = 1;
 	int[] yx;
+	
+	Scanner scan = new Scanner(System.in);
 	Motion mv = new Motion();
 	
 	public void move() {
-		Scanner scan = new Scanner(System.in);
-		view(ay,ax,by,bx);
+		view();
 		
 		while (true) {
 			System.out.print("방향을 입력하세요: ");
@@ -28,18 +29,15 @@ public class Quiz19 { // 출제자: 정하린
 			ay = yx[0];
 			ax = yx[1];
 			
-			if (view(ay,ax,by,bx)) {
+			if (view()) {
 				by = ay;
 				bx = ax;
-			} else {
-				ay = by;
-				ax = bx;
 			}
 			
 			if (ay == 4 && ax == 5) {
 				ay = 2;
 				ax = 4;
-				view(ay,ax,by,bx);
+				view();
 			}
 			
 			if (ay == 1 && ax == 5) {
@@ -50,16 +48,17 @@ public class Quiz19 { // 출제자: 정하린
 		scan.close();
 	}
 	
-	public boolean view(int ay, int ax, int by, int bx) {
+	public boolean view() {
 		boolean go = true;
+		if (map[ay][ax] == 1) {
+			ay = by;
+			ax = bx;
+			go = false;
+		}
 		
 		for (int y = 0; y < map.length; y++) {
 			for (int x = 0; x < map[y].length; x++) {
-				if (map[ay][ax] == 1) {
-					ay = by;
-					ax = bx;
-					go = false;
-				}
+				
 				
 				if (y == ay && x == ax) {
 					System.out.print(" S ");

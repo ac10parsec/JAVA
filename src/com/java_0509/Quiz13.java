@@ -13,17 +13,18 @@ public class Quiz13 {
 			{1,0,1,0,1,1,1,1,0,1}, // y = 5
 			{1,0,0,0,0,0,0,0,0,1}, // y = 6
 			{1,0,0,1,1,0,1,1,0,1}, // y = 7
-			{1,0,0,1,1,0,0,0,0,1}, // y = 8
+			{1,0,0,1,1,0,0,0,3,1}, // y = 8
 			{1,1,1,1,1,1,1,1,1,1}   // y = 9
 	};
 	
 	int ay = 1; int ax = 1; int by = 1; int bx = 1;
 	int[] yx;
+	
+	Scanner scan = new Scanner(System.in);
 	Motion mv = new Motion();
 	
 	public void move() {
-		Scanner scan = new Scanner(System.in);
-		view(ay,ax,by,bx);
+		view();
 		
 		while (true) {
 			System.out.print("방향을 입력하세요: ");
@@ -32,19 +33,16 @@ public class Quiz13 {
 			ay = yx[0];
 			ax = yx[1];
 			
-			if (view(ay,ax,by,bx)) {
+			if (view()) {
 				by = ay;
 				bx = ax;
-			} else {
-				ay = by;
-				ax = bx;
 			}
 			
 			if (ay == 3 && ax == 3) {
 				map[3][3] = 0;
 			}
 			
-			if (ay == 8 && ax == 8 && map[3][3] == 0) {
+			if (map[ay][ax] == 3 && map[3][3] == 0) {
 				System.out.println("끝!");
 				break;
 			}
@@ -52,17 +50,16 @@ public class Quiz13 {
 		scan.close();
 	}
 	
-	public boolean view(int ay, int ax, int by, int bx) {
+	public boolean view() {
 		boolean go = true;
+		if (map[ay][ax] == 1) {
+			ay = by;
+			ax = bx;
+			go = false;
+		}
 		
 		for (int y = 0; y < map.length; y++) {
 			for (int x = 0; x < map[y].length; x++) {
-				if (map[ay][ax] == 1) {
-					ay = by;
-					ax = bx;
-					go = false;
-				}
-				
 				if (y == ay && x == ax) {
 					System.out.print(" S ");
 				} else {
@@ -70,6 +67,8 @@ public class Quiz13 {
 						System.out.print(" ■ ");
 					} else if (map[y][x] == 2) {
 						System.out.print(" ♥ ");
+					} else if (map[y][x] == 3) {
+						System.out.print(" ○ ");
 					} else {
 						System.out.print(" □ ");
 					}

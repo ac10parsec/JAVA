@@ -6,8 +6,9 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		반복문 c = new 반복문();
-		//c.lv5();
-		c.test();
+//		c.lv4();
+		c.lv5();
+//		c.test();
 		
 	}
 

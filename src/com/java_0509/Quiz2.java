@@ -14,32 +14,20 @@ public class Quiz2 { // 출제자: 염종찬
 			{0,0,0,0,0,0,0}  // y = 6
 	};
 	
+	int ay = 0; int ax = 6; int by = 0; int bx = 6;
+	int[] yx;
+	
+	Scanner scan = new Scanner(System.in);
+	Motion mv = new Motion();
+	
 	public void move() {
-		Scanner scan = new Scanner(System.in);
-		int ay = 0; int ax = 6; int by = 0; int bx = 6;
-		view(ay,ax,by,bx);
+		view();
 		
 		while (true) {
 			System.out.print("방향을 입력하세요: ");
-			String motion = scan.next();
-			switch (motion) {
-			case "w": // 위로 이동
-				ay--;
-				break;
-			case "s": // 아래로 이동
-				ay++;
-				break;
-			case "d": // 오른쪽으로 이동
-				ax++;
-				break;
-			case "a": // 왼쪽으로 이동
-				ax--;
-				break;
-			default:
-				System.out.println("잘못된 이동입니다!");
-				break;
-			}
-			view(ay,ax,by,bx);
+			yx = mv.mv(scan.next(),ay,ax);
+			ay = yx[0]; ax = yx[1];
+			view();
 
 			if (ay == 3 && ax == 3) {
 				System.out.print("게임을 그만 두시겠습니까? ");
@@ -56,7 +44,7 @@ public class Quiz2 { // 출제자: 염종찬
 		}
 	}
 	
-	public void view(int ay, int ax, int by, int bx) {
+	public void view() {
 		for (int y = 0; y < map.length; y++) {
 			for (int x = 0; x < map[y].length; x++) {
 				if (y == ay && x == ax) {
