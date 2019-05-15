@@ -4,9 +4,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Quiz20 quiz = new Quiz20();
+		Quiz17 quiz = new Quiz17();
 		quiz.move();
-		
+			
 	}
 
 }

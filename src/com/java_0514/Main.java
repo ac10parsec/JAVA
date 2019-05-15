@@ -1,14 +1,12 @@
-package com.java_0426;
+package com.java_0514;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		반복문 c = new 반복문();
-		c.lv4();
-//		c.lv5();
-//		c.test();
+		엘리베이터 test = new 엘리베이터();
+		test.a1();
 		
 	}
 

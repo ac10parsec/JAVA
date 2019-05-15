@@ -2,9 +2,9 @@ package com.java_0509;
 
 import java.util.Scanner;
 
-public class Quiz13 {
+public class Quiz13 { // 출제자: 권봉준
 	
-	int[][] map = { // 출제자: 권봉준
+	int[][] map = { 
 			{1,1,1,1,1,1,1,1,1,1}, // y = 0
 			{1,0,1,0,0,0,0,0,0,1}, // y = 1
 			{1,0,1,0,1,1,0,1,0,1}, // y = 2
