@@ -4,21 +4,22 @@ import java.util.Scanner;
 
 public class Main {
 
+	public void call(TestInterface test) {
+		System.out.println(test.say());
+	}
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+		Main main = new Main();
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.print("Dog? Cat?");
-		String anny = scan.next();
-		switch (anny) {
+		String animal = scan.next();
+		switch (animal) {
 		case "Dog":
-			TestInterface test = new Dog();
-			test.say(anny);
+			main.call(new Dog());
 			break;
 		case "Cat":
-			TestInterface test2 = new Cat();
-			test2.say(anny);
+			main.call(new Cat());
 			break;
 		}
 		
