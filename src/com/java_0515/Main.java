@@ -23,6 +23,7 @@ public class Main {
 			break;
 		}
 		
+		scan.close();
 	}
 
 }
