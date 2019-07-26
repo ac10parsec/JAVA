@@ -2,44 +2,46 @@ package com.java_0726;
 
 public class Move {
 	
-	public int[] go(int[] position, String motion) {
+	public int[] go(String motion, int y, int x) {
 		switch (motion) {
 		case "w":
-			position[0]--;
+			y--;
 			break;
 		case "s":
-			position[0]++;
+			y++;
 			break;
 		case "a":
-			position[1]--;
+			x--;
 			break;
 		case "d":
-			position[1]++;
+			x++;
 			break;
 		default:
 			System.out.println("잘못된 이동입니다!");
 			break;
 		}
-		return position;
+		int[] head = {y, x};
+		return head;
 	}
 	
-	public int[] back(int[] position, String motion) {
+	public int[] back(String motion, int y, int x) {
 		switch (motion) {
 		case "w":
-			position[0]++;
+			y++;
 			break;
 		case "s":
-			position[0]--;
+			y--;
 			break;
 		case "a":
-			position[1]++;
+			x++;
 			break;
 		case "d":
-			position[1]--;
+			x--;
 			break;
 		default:
 			break;
 		}
-		return position;
+		int[] head = {y, x};
+		return head;
 	}
 }
